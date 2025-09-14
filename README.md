@@ -185,7 +185,7 @@ python create_kb.py
 
 - Frontend unable to reach backend: verify the backend URL in the frontend configuration and CORS settings in `api/main.py`.
 
-## Next suggestions (I can do these for you)
+## Future Scope
 
 - Add a `backend/requirements.txt` (created in the repo) with pinned dependency versions.
 - Add `backend/__init__.py` and `backend/api/__init__.py` files if you still see import issues when running from the repo root.
@@ -199,4 +199,4 @@ If you'd like, I can now:
 - add `__init__.py` files to `backend` and `backend/api` to help imports, and
 - add a small PowerShell script to start both the backend and frontend in development.
 
-Which of these should I do next?
+
