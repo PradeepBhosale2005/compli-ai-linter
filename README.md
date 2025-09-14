@@ -85,10 +85,10 @@ $env:AZURE_OPENAI_EMBEDDING_DEPLOYMENT = "<embedding-deployment-name>"
 
 Note: The project reads settings from `config/settings.py` — inspect that file for exact variable names if you run into issues.
 
-5. Initialize or check the database (optional):
+5. For Initialize the croma db and Embedding the pdf's :
 
 ```powershell
-python check_database.py
+python create_kb.py
 ```
 
 This will print table info or create the SQLite file on first run (if the code creates it at startup).
@@ -98,19 +98,15 @@ This will print table info or create the SQLite file on first run (if the code c
 Run the uvicorn server from the `backend` folder (venv active):
 
 ```powershell
-# option 1 (recommended)
 uvicorn api.main:app --reload
-
-# option 2 (explicit module run)
-python -m uvicorn api.main:app --reload
 ```
 
 If you get `ModuleNotFoundError: No module named 'api'`, ensure you're executing the command from inside the `backend` folder (the folder that contains the `api` package) and the virtualenv is activated. The `backend` folder should contain the `api` directory.
 
 Visit the API docs once the server is running:
 
-- http://127.0.0.1:8000/docs
-- http://127.0.0.1:8000/health
+- http://localhost:8000/docs
+- http://localhost:8000/health
 
 ### 4) Frontend setup (React)
 
@@ -136,7 +132,7 @@ npm run dev
 npm start
 ```
 
-By default the app runs on http://localhost:3000 or http://localhost:5173. The frontend is configured to call the backend running at http://127.0.0.1:8000 in development.
+By default the app runs on http://localhost:3000 or http://localhost:5173. The frontend is configured to call the backend running at http://localhost:8000 in development.
 
 ### 5) Test a full upload & analysis
 
@@ -146,7 +142,7 @@ By default the app runs on http://localhost:3000 or http://localhost:5173. The f
 Example using curl (PowerShell):
 
 ```powershell
-curl -X POST "http://127.0.0.1:8000/analyze-document" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@C:\path\to\your\document.docx"
+curl -X POST "http://localhost:8000/analyze-document" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@C:\path\to\your\document.docx"
 ```
 
 ### 6) Running quick tests & helper scripts
@@ -160,7 +156,7 @@ python test_focused_system.py
 - Populate RAG/KB embeddings (if using the knowledge base):
 
 ```powershell
-python create_kb_embeddings.py
+python create_kb.py
 ```
 
 ---
