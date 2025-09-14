@@ -69,7 +69,7 @@ const FileUpload = ({ setIsLoading, setAnalysisResult }) => {
 
       // Send POST request to backend endpoint
       const response = await axios.post(
-        'http://127.0.0.1:8000/analyze-document',
+        'http://localhost:8000/analyze-document',
         formData,
         {
           headers: {
@@ -89,7 +89,7 @@ const FileUpload = ({ setIsLoading, setAnalysisResult }) => {
         try {
           console.log('Saving analysis to database...');
           const saveResponse = await axios.post(
-            'http://127.0.0.1:8000/save-analysis-result',
+            'http://localhost:8000/save-analysis-result',
             response.data,
             {
               headers: {

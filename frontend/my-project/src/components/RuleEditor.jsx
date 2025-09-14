@@ -28,7 +28,7 @@ const RuleEditor = () => {
       setIsLoading(true);
       setError('');
       
-      const response = await axios.get('http://127.0.0.1:8000/get-rules/');
+      const response = await axios.get('http://localhost:8000/get-rules/');
       
       if (response.data && response.data.success) {
         setSavedRules(response.data.rules || []);
@@ -62,7 +62,7 @@ const RuleEditor = () => {
       setSuccessMessage('');
 
       const response = await axios.post(
-        'http://127.0.0.1:8000/add-rule/',
+        'http://localhost:8000/add-rule/',
         {
           rule_text: newRuleText.trim(),
           rule_type: 'Custom',
@@ -112,7 +112,7 @@ const RuleEditor = () => {
     }
 
     try {
-      const response = await axios.delete(`http://127.0.0.1:8000/delete-rule/${ruleId}`);
+      const response = await axios.delete(`http://localhost:8000/delete-rule/${ruleId}`);
       
       if (response.data && response.data.success) {
         setSuccessMessage('Rule deleted successfully!');

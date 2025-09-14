@@ -24,7 +24,7 @@ const DocumentHistory = () => {
       setIsLoading(true);
       setError('');
       
-      const response = await axios.get('http://127.0.0.1:8000/document-history');
+      const response = await axios.get('http://localhost:8000/document-history');
       
       if (response.data && response.data.success) {
         setDocuments(response.data.documents || []);
@@ -42,7 +42,7 @@ const DocumentHistory = () => {
   const viewDocumentDetails = async (documentId) => {
     try {
       setError('');
-      const response = await axios.get(`http://127.0.0.1:8000/document-details/${documentId}`);
+      const response = await axios.get(`http://localhost:8000/document-details/${documentId}`);
       
       if (response.data && response.data.success) {
         setSelectedDocument(response.data.analysis_result);

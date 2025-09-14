@@ -29,7 +29,7 @@ const EnhancedRuleEditor = ({ documentId = null }) => {
   const fetchGlobalRules = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get('http://127.0.0.1:8000/get-rules/');
+      const response = await axios.get('http://localhost:8000/get-rules/');
       if (response.data && response.data.success) {
         setGlobalRules(response.data.rules || []);
       }
@@ -45,7 +45,7 @@ const EnhancedRuleEditor = ({ documentId = null }) => {
     if (!documentId) return;
     
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/document-rules/${documentId}`);
+      const response = await axios.get(`http://localhost:8000/document-rules/${documentId}`);
       if (response.data && response.data.success) {
         setDocumentRules(response.data.rules || []);
       }
@@ -74,8 +74,8 @@ const EnhancedRuleEditor = ({ documentId = null }) => {
       setSuccessMessage('');
 
       const endpoint = activeTab === 'global' 
-        ? 'http://127.0.0.1:8000/add-rule/'
-        : `http://127.0.0.1:8000/add-document-rule/${documentId}`;
+        ? 'http://localhost:8000/add-rule/'
+        : `http://localhost:8000/add-document-rule/${documentId}`;
 
       const response = await axios.post(endpoint, {
         rule_text: newRuleText.trim(),
@@ -116,8 +116,8 @@ const EnhancedRuleEditor = ({ documentId = null }) => {
 
     try {
       const endpoint = isGlobal 
-        ? `http://127.0.0.1:8000/delete-rule/${ruleId}`
-        : `http://127.0.0.1:8000/delete-document-rule/${ruleId}`;
+        ? `http://localhost:8000/delete-rule/${ruleId}`
+        : `http://localhost:8000/delete-document-rule/${ruleId}`;
 
       const response = await axios.delete(endpoint);
       

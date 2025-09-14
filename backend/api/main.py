@@ -102,7 +102,7 @@ app = FastAPI(
 # Add CORS middleware for frontend integration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173", "http://localhost:5174"],  # React development servers
+    allow_origins=["*"],  # React development servers
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -882,7 +882,7 @@ async def add_rule(rule: Rule):
         logger.error(f"Error adding rule: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Failed to add rule: {str(e)}")
 
-@app.get("/get-rules/")
+@app.get("/get-rules")
 async def get_rules():
     """
     Retrieve all custom compliance rules.
