@@ -1,0 +1,37 @@
+{
+  "rules": [
+    {
+      "name": "Training References Required",
+      "description": "All SOPs must reference required training materials or competency assessments",
+      "severity": "Major",
+      "rule_text": "Document must include references to associated training materials, competency assessments, or qualification requirements for personnel executing the procedures."
+    },
+    {
+      "name": "Risk Assessment Documentation",
+      "description": "Documents should include or reference risk assessment for critical processes",
+      "severity": "Minor",
+      "rule_text": "For critical processes, document should include or reference risk assessment documentation identifying potential risks and mitigation strategies."
+    },
+    {
+      "name": "Equipment Calibration References",
+      "description": "SOPs involving equipment must reference calibration requirements",
+      "severity": "Major",
+      "rule_text": "When procedures involve measurement equipment or instruments, the SOP must reference calibration requirements, schedules, and acceptance criteria."
+    },
+    {
+      "name": "Data Integrity Checkpoints",
+      "description": "Validation protocols must include specific data integrity checkpoints",
+      "severity": "Critical",
+      "rule_text": "Validation protocols must include explicit data integrity checkpoints, verification steps, and electronic record controls at critical process steps."
+    },
+    {
+      "id": 1,
+      "name": "Custom Rule 1",
+      "description": "All document have date year more than 2024",
+      "rule_text": "All document have date year more than 2024",
+      "rule_type": "Custom",
+      "severity": "Major",
+      "created_at": "2025-09-14T06:49:55.453643"
+    }
+  ]
+}
