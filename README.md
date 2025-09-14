@@ -188,12 +188,12 @@ python create_kb.py
 ## Future Scope
 
 - will work with different type's of doc other than SOP.
-- will extract rules from the uploaded doc type.
+- will extract required field from the uploaded example doc and will verify those field against that specific doc.
 - user can add or delete his compliance from the Knowledge base.
 
 ## Library used 
 
-- Declaration of Third-Party Libraries, Tools, and Frameworks
+#Declaration of Third-Party Libraries, Tools, and Frameworks
 - This document outlines all external dependencies used in the "CompliAI Linter" project.
 - Backend (Python) The backend is built using Python with the following libraries:
 - FastAPI: A modern, high-performance web framework used to build the API endpoints.
