@@ -187,16 +187,35 @@ python create_kb.py
 
 ## Future Scope
 
-- Add a `backend/requirements.txt` (created in the repo) with pinned dependency versions.
-- Add `backend/__init__.py` and `backend/api/__init__.py` files if you still see import issues when running from the repo root.
-- Add simple PowerShell or npm scripts to start both backend and frontend together.
-- Add automated tests and a GitHub Actions CI workflow to run lint/tests on push.
+- will work with different type's of doc other than SOP.
+- will extract rules from the uploaded doc type.
+- user can add or delete his compliance from the Knowledge base.
 
+## Library used 
+
+- Declaration of Third-Party Libraries, Tools, and Frameworks
+- This document outlines all external dependencies used in the "CompliAI Linter" project.
+- Backend (Python) The backend is built using Python with the following libraries:
+- FastAPI: A modern, high-performance web framework used to build the API endpoints.
+- Uvicorn: An ASGI server used to run the FastAPI application.
+- OpenAI: The official client library for interacting with the Azure OpenAI service for both chat and embedding models.
+- ChromaDB: A file-based vector database used to store and perform semantic searches on the - knowledge base embeddings.
+- pydantic-settings: A library used in the configuration module to manage settings and secrets - robustly from an environment file (.env).
+- python-docx: A library used to parse and extract text and structure from Microsoft Word (.docx) documents.
+- pypdf: A library used to parse and extract text from PDF (.pdf) documents.
+- scikit-learn: A machine learning library used specifically for its cosine_similarity function to compare embedding vectors.
+- python-multipart: A required dependency for FastAPI to handle file uploads from HTML forms.
+Frontend (JavaScript)
+The frontend is a single-page application built with the following tools and frameworks:
+- Vite: A modern, fast build tool and development server used to create and run the React project.
+- React: A JavaScript library for building user interfaces, used as the primary framework for the frontend.
+- Tailwind CSS: A utility-first CSS framework used for all styling to rapidly create a modern and professional user interface.
+- axios: A promise-based HTTP client used to make API calls from the frontend to the backend server.
+# Development Tools
+- Git & GitHub: Used for version control and repository hosting.
+- Visual Studio Code: The primary code editor.
 ---
 
-If you'd like, I can now:
-- create a `backend/requirements.txt` file (I will add one if you confirm),
-- add `__init__.py` files to `backend` and `backend/api` to help imports, and
-- add a small PowerShell script to start both the backend and frontend in development.
+
 
 
